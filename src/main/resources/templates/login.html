@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+<script src="/javascript/login.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/login.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="author" content="Mohamed Abderrahmen Amara, Mohamed Karim Swissi">
+</head>
+<body>
+<form id="loginForm">
+  <div class="bildcontainer">
+    <img src="/bilder/logo.png" alt="Avatar" class="avatar">
+  </div>
+
+  <div class="container">
+    <label for="uname"><b>Username</b></label>
+    <input type="text" placeholder="Username eintragen" id="username" required>
+
+    <label for="psw"><b>Passwort</b></label>
+    <input type="password" placeholder="Passwort eintragen" id="passwort" required>
+        
+    <button id="einloggen">Einloggen</button>
+    <label>
+      <input type="checkbox" checked="checked" name="speichern"> angemeldet bleiben
+    </label>
+  </div>
+
+  <div class="containerbutton">
+    <button type="button" class="cancelbtn">Abbrechen</button>
+    <span class="psw">Passwort <a href="#">vergessen?</a></span>
+  </div>
+</form>
+
+</body>
+</html>

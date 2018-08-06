@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mohamed Abderrahmen Amara, Mohamed Karim Swissi">
+
+    <title>Profil bearbeiten</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- MetisMenu CSS -->
+    <link href="../vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script	src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+    <script src="/javascript/profil.js"></script>
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Profil bearbeiten</a>
+            </div>
+            <!-- /.navbar-header -->
+
+            <ul class="nav navbar-top-links navbar-right">
+                <!-- /.dropdown -->
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                        <li><a href="#" class="logout"><i class="fa fa-sign-out fa-fw"></i> Abmelden</a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-user -->
+                </li>
+                <!-- /.dropdown -->
+            </ul>
+            <!-- /.navbar-top-links -->
+
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">
+                        <li>
+                            <a href="start"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.sidebar-collapse -->
+            </div>
+            <!-- /.navbar-static-side -->
+        </nav>
+
+        <div id="page-wrapper">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">Profil</h1>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+            <div class="container">
+    <form>
+        <div class="form-group">
+            <label for="orgName">Name</label>
+            <input type="text" class="form-control" id="orgName" required name="orgName">
+            <div hidden="true"
+                 class="alert alert-danger">
+                Der Name ist ein Pflichtfeld
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="anzahltFullTimeStaff">Hauptamtliche Mitarbeiter</label>
+            <input type="number" required pattern="[0-9]*" class="form-control" id="anzahltFullTimeStaff" name="anzahltFullTimeStaff">
+        </div>
+
+        <div class="form-group">
+            <label for="aAnzahlFreiwilligeMitarbeiter">Ehrenamtliche Mitarbeiter</label>
+            <input type="number" required pattern="[0-9]*" class="form-control" id="aAnzahlFreiwilligeMitarbeiter" name="aAnzahlFreiwilligeMitarbeiter">
+        </div>
+
+        <div class="form-group">
+            <label for="anzahlMitglieder">Mitglieder/Gesellschafter</label>
+            <input type="number" required pattern="[0-9]*" class="form-control" id="anzahlMitglieder" name="anzahlMitglieder">
+        </div>
+
+        <div class="form-group">
+            <label for="managementbody">Leitungsorgan</label>
+            <select class="form-control" id="managementbody" required name="managementbody">
+            	<option>Vorstand</option>
+            	<option>Geschäftsführung</option>
+            	<option>Bundesvorstand</option>
+            	<option>Direktion</option>
+    			<option>Präsidium</option>
+    			<option>Territorialleiter</option>
+    			<option>Missionsprokurator</option>
+    			<option>Provinzial</option>
+    			<option>Direktorium</option>
+    			<option>Verwaltungsausschuss</option>
+    			<option>Koordinierungskreis_Vorstand</option>
+    			<option>Stiftungsvorstand</option>
+    			<option>Gesamtvorstand</option>
+    			<option>Geschäftsführender_Vorstand</option>
+    			<option>Präsidium_Vorstand</option>
+    			<option>Kuratorium</option>
+            </select>
+        </div>
+
+        <fieldset class="form-group">
+            <label for="organisationsLogo">Logo</label>
+            <input type="file" class="form-control-file" id="organisationsLogo" name="organisationsLogo">
+        </fieldset>
+
+        <div class="form-group">
+            <label for="orgFoundingJahr">Gründungsjahr</label>
+            <input type="number" required minlength="4" maxlength="4" pattern="[0-9]*" class="form-control" id="orgFoundingJahr"
+                   name="orgFoundingJahr">
+        </div>
+
+        <fieldset class="form-group">
+            <label for="orgBeschreibung">Beschreibung</label>
+            <textarea class="form-control" rows="3" id="orgBeschreibung" name="orgBeschreibung"></textarea>
+        </fieldset>
+
+        <div class="jumbotron">
+            <h3>Angaben zu Geschäftsführung/Vorsitz</h3>
+            <div class="form-group">
+                <label for="mangementPersonName">Name</label>
+                <input type="text" class="form-control" id="mangementPersonName" name="mangementPersonName">
+            </div>
+            <div class="form-group">
+                <label for="mangementPersonVorname">Vorname</label>
+                <input type="text" class="form-control" id="mangementPersonVorname" name="mangementPersonVorname">
+            </div>
+
+            <div class="card mb-3">
+                <div class="card-header">Geburtsdatum</div>
+                <div class="form-group">
+                    <input type="date" id="mangementPersonGD" name="mangementPersonGD">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="mangGeschlecht">Geschlecht</label>
+                <select class="form-control" id="mangGeschlecht" required name="mangGeschlecht">
+                    <option>männlich</option>
+                    <option>weiblich</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="mangAnrede">Anrede</label>
+                <select class="form-control" id="mangAnrede"
+                        required name="mangAnrede">
+                    <option>Herr</option>
+                    <option>Frau</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="supervisorBody">Aufsichtsorgan</label>
+            <select class="form-control" id="supervisorBody" required name="supervisorBody">
+                <option>Mitgliederversammlung</option>
+   				<option>Revisionskommission</option>
+    			<option>Kuratorium</option>
+    			<option>Aufsichtsrat</option>
+    			<option>Bischöfliche Kommission ADVENIAT</option>
+    			<option>Verwaltungsrat</option>
+    			<option>Stiftungsrat</option>
+    			<option>Konferenz Diakonie und Entwicklung</option>
+    			<option>Bundesausschuss</option>
+    			<option>Bundeskammer</option>
+    			<option>Bundesversammlung</option>
+    			<option>Caritasrat</option>
+    			<option>Vertreterversammlung</option>
+    			<option>Missionsrat</option>
+    			<option>Hauptversammlung</option>
+    			<option>Delegiertenversammlung</option>
+    			<option>Landesrat</option>
+    			<option>Präsidium</option>
+    			<option>Rechnungsprüfer</option>
+    			<option>Mitgliederkommission</option>
+    			<option>Prüfungsausschuss</option>
+    			<option>Intern. Headquarters</option>
+    			<option>Finanzrat</option>
+    			<option>General Maintenance Board</option>
+    			<option>Beirat</option>
+    			<option>Provinzialrat der Deutschen Provinz</option>
+    			<option>Kontrollausschuss</option>
+    			<option>Regierungspräsidium Freiburg</option>
+    			<option>besonderes Aufsichtsorgan</option>
+    			<option>Gesellschafterversammlung</option>
+    			<option>Schiedskommission</option>
+    			<option>Regierungspräsidium Kassel</option>
+    			<option>Aufsichtsgremium</option>
+    			<option>Generalversammlung</option>
+    			<option>Arbeitsausschuss</option>
+    			<option>Finanzkontrollausschuss</option>
+    			<option>Zentralrat (Nationalrat)</option>
+    			<option>Behörde für Wissenschaft und Forschung</option>
+    			<option>Hochschulamt, der Freien und Hansestadt Hamburg</option>
+    			<option>Präsidialausschuss</option>
+    			<option>Circuskuratorium</option>
+    			<option>Kassenprüfer</option>
+    			<option>Bezirksregierung Braunschweig</option>
+    			<option>Revisoren</option>
+    			<option>Vereinsausschuss</option>
+    			<option>Vollversammlung</option>
+    			<option>Rat</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="orgAdresse">Straße</label>
+            <input type="text" class="form-control" id="orgAdresse" name="orgAdresse">
+        </div>
+
+        <div class="form-group">
+            <label for="orgOrt">Ort</label>
+            <input type="text" class="form-control" id="orgOrt" name="orgOrt">
+        </div>
+
+        <div class="form-group">
+            <label for="orgPlz">PLZ</label>
+            <input type="text" required minlength="5" maxlength="5" pattern="[0-9]*" class="form-control" id="orgPlz" name="orgPlz">
+        </div>
+
+        <div class="form-group">
+            <label for="orgLand">Land</label>
+            <input type="text" class="form-control" id="orgLand" name="orgLand">
+        </div>
+
+        <div class="jumbotron">
+            <h4>Kontakte</h4>
+            <div class="form-group">
+                <label for="orgDigitalKontaktArt">Kontaktart</label>
+                <select class="form-control" id="orgDigitalKontaktArt" name="orgDigitalKontaktArt">
+                    <option>Email</option>
+                    <option>Webseite</option>
+                    <option>Telefon</option>
+                    <option>Fax</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="orgDigitalKontaktInhalt">Kontakt</label>
+                <input type="text" class="form-control" id="orgDigitalKontaktInhalt" name="orgDigitalKontaktInhalt">
+            </div>
+        </div>
+
+        <div class="jumbotron">
+            <h4>Einnahmen</h4>
+            <div class="form-group">
+                <label for="einnJahr">Jahr</label>
+                <input type="text" class="form-control" id="einnJahr" name="einnJahr">
+            </div>
+
+            <div class="form-group">
+                <label for="einnSumme">Summe</label>
+                <input type="text" class="form-control" id="einnSumme" name="einnSumme">
+            </div>
+        </div>
+
+        <div class="jumbotron">
+            <h4>Bank-Daten</h4>
+            <div class="form-group">
+                <label for="bankKonIban">IBAN</label>
+                <input type="text" class="form-control" id="bankKonIban" name="bankKonIban">
+            </div>
+
+            <div class="form-group">
+                <label for="bankKonName">Bank</label>
+                <input type="text" class="form-control" id="bankKonName" name="bankKonName">
+            </div>
+
+            <div class="form-group">
+                <label for="bankKonBic">BIC</label>
+                <input type="text" class="form-control" id="bankKonBic" name="bankKonBic">
+            </div>
+
+            <div class="form-group">
+                <label for="bankKonKontoNummer">Kontonummer</label>
+                <input type="text" class="form-control" id="bankKonKontoNummer" name="bankKonKontoNummer">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="orientation">Weltanschauliche Ausrichtung</label>
+            <select class="form-control" id="orientationSelect" required name="orientationSelect">
+            </select>
+        </div>
+
+        <fieldset class="form-group">
+            <label for="orgWerbungFin">Werbung, Finanzen und Prüfung</label>
+            <textarea class="form-control" rows="3" id="orgWerbungFin" name="orgWerbungFin"></textarea>
+        </fieldset>
+
+        <div class="jumbotron">
+            <h4>Länderschwerpunkte</h4>
+            <textarea rows="4" id="land-box" placeholder="geben Sie bitte den Namen des Landes ein" class="form-control"></textarea>
+        </div>
+
+        <fieldset class="form-group">
+            <label for="orgTaet">Tätigkeitsfelder</label>
+            <textarea class="form-control" rows="4" id="orgTaet" name="orgTaet"></textarea>
+        </fieldset>
+
+        <div class="form-group">
+            <label for="legForm">Rechtsform</label>
+            <select class="form-control" id="legForm" required name="legForm">
+                <option>Verein</option>
+    			<option>Stiftung</option>
+    			<option>rechtlich unselbständig</option>
+    			<option>Rechtsfähiger Verein kraft staatlicher Verleihung</option>
+    			<option>Körperschaft des öffentlichen Rechts</option>
+    			<option>AG</option>
+    			<option>GmbH</option>
+    			<option>nicht rechtsfähige Stiftung</option>
+    			<option>GbR</option>
+    			<option>KG</option>
+    			<option>AG & Co. KG</option>
+    			<option>GmbH & Co. KG</option>
+    			<option>Limited & Co. KG</option>
+    			<option>Stiftung & Co. KG</option>
+    			<option>Stiftung GmbH & Co. KG</option>
+    			<option>UG & Co. KG</option>
+    			<option>OHG</option>
+    			<option>GmbH & Co. OHG</option>
+    			<option>Partenreederei</option>
+			    <option>PartG</option>
+    			<option>PartG mbB</option>
+    			<option>Stille Gesellschaft</option>
+    			<option>Eigenbetrieb</option>
+    			<option>Einzelunternehmen</option>
+    			<option>eG</option>
+    			<option>e.V.</option>
+    			<option>gAG</option>
+    			<option>gGmbH</option>
+    			<option>InvAG</option>
+    			<option>KGaA</option>
+    			<option>AG & Co. KGaA</option>
+    			<option>SE & Co. KGaA</option>
+    			<option>UG (haftungsbeschränkt)</option>
+    			<option>Stiftung & Co. KGaA</option>
+            </select>
+</div>
+
+       <!-- <div class="alert alert-success" role="alert" [hidden]="!submitted">
+            <h4 class="alert-heading">Die Organisation wurde erfolfreich gespeichert!</h4>
+        </div>-->
+        <button type="submit" class="btn btn-default" id="bestaetigen">Bestätigen</button>
+    </form>
+</div>
+
+						<div class="panel-body">
+                            <!-- Button trigger modal -->
+                            <button data-toggle="modal" data-target="#myModal" id="btnModal" hidden="hidden">
+                            </button>
+                            <!-- Modal -->
+                            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                            <h4 class="modal-title" id="myModalLabel">Bestätigung</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            Ihre Änderungen wurden erfolgreich gespeichert.
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Schließen</button>
+                                           <!--  <button type="button" class="btn btn-primary">Save changes</button>--> 
+                                        </div>
+                                    </div>
+                                    <!-- /.modal-content -->
+                                </div>
+                                <!-- /.modal-dialog -->
+                            </div>
+                            <!-- /.modal -->
+                        </div>
+            <!-- /.row -->
+        </div>
+        <!-- /#page-wrapper -->
+        
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="../vendor/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="../vendor/metisMenu/metisMenu.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="../dist/js/sb-admin-2.js"></script>
+
+</body>
+
+</html>
