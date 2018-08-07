@@ -11,4 +11,9 @@ public class ViewController {
 		return "login";
 	}
 	
+	@GetMapping("/home")
+	public String index() {
+		return "index";
+	}
+	
 }
