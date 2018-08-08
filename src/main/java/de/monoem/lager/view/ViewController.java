@@ -16,4 +16,25 @@ public class ViewController {
 		return "index";
 	}
 	
+	@GetMapping("/shop")
+	public String shop() {
+		return "shop";
+	}
+	
+	@GetMapping("/details")
+	public String details() {
+		return "details";
+	}
+	
+	@GetMapping("/dashboard")
+	public String dashboard() {
+		return "dashboard";
+	}
+	
+	
+	@GetMapping("/productdetails")
+	public String productdetails() {
+		return "productdetails";
+	}
+	
 }

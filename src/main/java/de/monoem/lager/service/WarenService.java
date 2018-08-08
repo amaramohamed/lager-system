@@ -21,6 +21,7 @@ public class WarenService {
 	WarenRepository mWarenRepository;
 
 	public ResponseEntity<Artikel> saveWare(Artikel pWare) {
+		// FIXME: persist das Haendler Objekt.
 		Artikel lWare = mWarenRepository.save(pWare);
 		return new ResponseEntity<Artikel>(lWare, HttpStatus.CREATED);
 	}
@@ -31,14 +32,14 @@ public class WarenService {
 			return Lists.newArrayList(mWarenRepository.findAll()).stream();
 		} else if (!(pWarenMarke == null) && pWarenName == null) {
 			return Lists.newArrayList(mWarenRepository.findAll()).stream()
-					.filter(ware -> ware.getWarenMarke().equals(pWarenMarke));
+					.filter(ware -> ware.getArtikelMarke().equals(pWarenMarke));
 		} else if (pWarenMarke == null && !(pWarenName == null)) {
 //			return Lists.newArrayList(mWarenRepository.findAll()).stream()
 //					.filter(ware -> ware.getWarenName().equals(pWarenName));
 			return null;
 		} else {
 			return Lists.newArrayList(mWarenRepository.findAll()).stream()
-					.filter(ware -> ware.getWarenMarke().equals(pWarenMarke));
+					.filter(ware -> ware.getArtikelMarke().equals(pWarenMarke));
 		}
 	}
 

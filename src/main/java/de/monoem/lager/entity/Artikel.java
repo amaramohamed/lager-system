@@ -29,11 +29,14 @@ public class Artikel {
 	private String artikelUuid;
 	
 	private String artikelNummer;
-	private String warenMarke;
-	private Long warenPreis;
-	private String warenBeschreibung;
+	private String artikelMarke;
+	private String artikelBezeichnung;
+	private Long artikelPreis;
+	private String artikelBeschreibung;
+	private String artikelKategorie;
+	private String artikelBild;
 	@ManyToMany
-	private List<Haendler> warenHaendler;
+	private List<Haendler> artikelHaendler;
 	
 
 }
